@@ -1,40 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+## Project Architecture & Decisions
+
+### Approach
+The project is structured for clarity and scalability, using Next.js for routing and SSR, colocating components and their styles, and separating utility logic and types. TypeScript ensures type safety throughout. Storybook is used for isolated UI development, and Jest for robust testing.
+
+### Trade-offs & Decisions
+- **Colocation vs. Centralization:** Styles are colocated with components for modularity and maintainability.
+- **Mocking in Tests:** Used simple mocks for CSS and flags to keep tests fast and focused on logic, not rendering.
+- **CI Simplicity:** Chose GitHub Actions for its integration and ease of use, running lint, type-check, tests, and build on every push/PR.
+ - **Static Data Fetching:** Used Next.js `getStaticProps` with a utility (`mapCountryTimesToEntries`) to load and transform country/timezone data at build time. This provides fast page loads and avoids runtime data fetching, but means updates to the data require a rebuild/deploy. Since our data is not frequently (or ever) changed, this is a reasonable trade-off for this project.
+
+### "Behind the Scenes" Answers
+1. **How did you handle time zone data?**
+	- Used a static JSON file for country/timezone data, mapped to UI entries via a utility function for flexibility and testability.
+2. **How would you scale this for more countries or dynamic data?**
+	- Abstract the data source (API or DB), and update the mapping utility to handle new formats.
+3. **How did you ensure code quality?**
+	- Enforced with ESLint, TypeScript, and CI. Logic is covered by unit tests, and UI by Storybook stories.
+4. **What would you improve with more time?**
+	- Add e2e tests (e.g., Cypress), improve accessibility, and add more robust error handling and loading states.
+
+# NeonSecurity Task
+
+This project is a Next.js-based application, featuring country/timezone pickers and related UI components. It includes Storybook for UI development, Jest for testing, and ESLint/TypeScript for code quality.
+
+## Features
+- **Next.js** for SSR/SSG React app
+- **TypeScript** for type safety
+- **Storybook** for component development
+- **Jest** for unit testing
+- **ESLint** and **Prettier** for code quality
+- **CI/CD** via GitHub Actions
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 20+
+- npm (comes with Node.js)
 
+### Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm ci
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
+Start the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Storybook
+Run Storybook for isolated component development:
+```bash
+npm run storybook
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Linting
+Check code quality with ESLint:
+```bash
+npm run lint
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### Type Checking
+Run TypeScript type checks:
+```bash
+npm run type-check || npx tsc --noEmit
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Testing
+Run all unit tests:
+```bash
+npm test
+```
 
-## Learn More
+### Build
+Build the production app:
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
+- `components/` — React UI components
+- `pages/` — Next.js pages
+- `data/` — Static data (e.g., countryTimes.json)
+- `utils/` — Utility functions
+- `types/` — TypeScript types
+- `public/` — Static assets
+- `__mocks__/` — Jest/Storybook mocks
+- `.github/workflows/ci.yml` — CI pipeline
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Continuous Integration
+GitHub Actions runs lint, type-check, tests, and build on every push/PR to main/master.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
+MIT
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.

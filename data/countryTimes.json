@@ -1,0 +1,32 @@
+{
+  "united_states": {
+    "deviation": -5,
+    "name": "United States",
+    "flag": "https://flagcdn.com/us.svg"
+  },
+  "united_kingdom": {
+    "deviation": 0,
+    "name": "United Kingdom",
+    "flag": "https://flagcdn.com/gb.svg"
+  },
+  "japan": {
+    "deviation": 9,
+    "name": "Japan",
+    "flag": "https://flagcdn.com/jp.svg"
+  },
+  "australia": {
+    "deviation": 10,
+    "name": "Australia",
+    "flag": "https://flagcdn.com/au.svg"
+  },
+  "brazil": {
+    "deviation": -3,
+    "name": "Brazil",
+    "flag": "https://flagcdn.com/br.svg"
+  },
+  "israel": {
+    "deviation": 2,
+    "name": "Israel",
+    "flag": "https://flagcdn.com/il.svg"
+  }
+}

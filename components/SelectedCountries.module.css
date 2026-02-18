@@ -1,0 +1,85 @@
+/* eslint-disable css/no-invalid-properties */
+.selectedCountryLabelContainer {
+  width: 100%;
+}
+
+.selectedCountryCustomLabel {
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid var(--surface-border);
+  border-radius: 5px;
+  padding: 4px 8px;
+  margin-bottom: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--surface-bg);
+  color: var(--surface-text);
+}
+
+.selectedCountryTimeGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  min-width: 70px;
+}
+
+.selectedCountryTime {
+  font-weight: 500;
+  margin-left: 0;
+  margin-bottom: 2px;
+  color: var(--surface-text);
+}
+
+.selectedCountriesContainer {
+  margin-top: 24px;
+  padding: 0 0 0 0;
+}
+
+.selectedCountriesList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.selectedCountryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  justify-content: space-between;
+  background: var(--surface-bg);
+  border: 1px solid var(--surface-border);
+  border-radius: 10px;
+  padding: 16px 22px;
+}
+
+.selectedCountryLabelGroup {
+  display: flex;
+  align-items: flex-start;
+}
+
+.selectedCountryValue {
+  color: #888;
+  font-size: 12px;
+  margin-left: 0;
+}
+
+.selectedCountryIcon {
+  margin-right: 8px;
+  border: 1px solid var(--surface-border);
+  border-radius: 3px;
+}
+
+.selectedCountryLabel {
+  margin-left: 0;
+  color: var(--surface-text);
+}
+
+.selectedCountryRow {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: row;
+}

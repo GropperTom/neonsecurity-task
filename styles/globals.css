@@ -1,12 +1,28 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* General surface theme variables */
+  --surface-bg: #fff;
+  --surface-border: #ccc;
+  --surface-text: #222;
+  /* Picker-specific */
+  --picker-dropdown-bg: #fff;
+  --picker-item-highlight: #e6f0ff;
+  --picker-border: #ccc;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #181a1b;
+    --foreground: #eee;
+    /* General surface theme variables */
+    --surface-bg: #181a1b;
+    --surface-border: #444;
+    --surface-text: #eee;
+    /* Picker-specific */
+    --picker-dropdown-bg: #23272a;
+    --picker-item-highlight: #2a3b4d;
+    --picker-border: #444;
   }
 }
 
