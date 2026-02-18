@@ -2,7 +2,7 @@ import countryTimes from "@/data/countryTimes.json";
 import { Entry } from "@/types/Entry";
 
 export function mapCountryTimesToEntries(): Entry[] {
-    return Object.entries(countryTimes).map(([_ , data]) => {
+    return Object.entries(countryTimes).map(([, data]) => {
         const deviation = Number(data.deviation);
 
         let deviationStr = "0";

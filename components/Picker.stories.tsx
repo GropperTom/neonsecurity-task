@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/nextjs";
 import Picker from "./Picker";
 import { Entry } from "@/types/Entry";
 
@@ -18,7 +18,6 @@ const entries: Entry[] = [
 ];
 
 export const Default: Story = {
-  name: "Default (3 entries)",
   args: {
     placeholder: "Select a country",
     entries,
@@ -27,7 +26,6 @@ export const Default: Story = {
 };
 
 export const Empty: Story = {
-  name: "Empty (no entries)",
   args: {
     placeholder: "Select a country",
     entries: [],
@@ -36,7 +34,6 @@ export const Empty: Story = {
 };
 
 export const LongLabels: Story = {
-  name: "Long Labels",
   args: {
     placeholder: "Select a country",
     entries: [
