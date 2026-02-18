@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/nextjs";
+import { Meta, StoryObj } from "@storybook/react";
 import Picker from "./Picker";
 import { Entry } from "@/types/Entry";
 
@@ -21,7 +21,7 @@ export const Default: Story = {
   args: {
     placeholder: "Select a country",
     entries,
-    onSelect: (entry) => alert(`Selected: ${entry.label}`),
+    onSelect: (entry: Entry) => alert(`Selected: ${entry.label}`),
   },
 };
 
@@ -41,7 +41,7 @@ export const LongLabels: Story = {
       { label: "The Federative Republic of Brazil", value: "-3", icon: "https://flagcdn.com/br.svg" },
       { label: "The Commonwealth of Australia", value: "+10", icon: "https://flagcdn.com/au.svg" },
     ],
-    onSelect: (entry) => alert(`Selected: ${entry.label}`),
+    onSelect: (entry: Entry) => alert(`Selected: ${entry.label}`),
   },
 };
 
@@ -54,6 +54,6 @@ export const SpecialCharacters: Story = {
       { label: "España (Spain)", value: "+1", icon: "https://flagcdn.com/es.svg" },
       { label: "Türkiye", value: "+3", icon: "https://flagcdn.com/tr.svg" },
     ],
-    onSelect: (entry) => alert(`Selected: ${entry.label}`),
+    onSelect: (entry: Entry) => alert(`Selected: ${entry.label}`),
   },
 };
