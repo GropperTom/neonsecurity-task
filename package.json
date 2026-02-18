@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@eslint/css": "^0.14.1",
-    "@eslint/js": "^10.0.1",
+    "@eslint/js": "^9.0.0",
     "@eslint/json": "^1.0.1",
     "@eslint/markdown": "^7.5.1",
     "@storybook/nextjs": "^10.2.8",
